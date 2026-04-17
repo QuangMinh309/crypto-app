@@ -6,7 +6,7 @@ import { Eye, EyeOff, Lock, Unlock, Copy, Check, Leaf } from "lucide-react";
 
 export default function Home() {
   const [inputText, setInputText] = useState("");
-  const [secretKey, setSecretKey] = useState("khoa-bi-mat-cua");
+  const [secretKey, setSecretKey] = useState("secret key of group 9");
   const [outputText, setOutputText] = useState("");
   const [showKey, setShowKey] = useState(false);
   const [copiedOutput, setCopiedOutput] = useState(false);
@@ -66,7 +66,7 @@ export default function Home() {
           <div className="mb-10 text-center">
             <div className="flex items-center justify-center gap-3 mb-3">
               <Leaf className="w-10 h-10 text-emerald-600" strokeWidth={1.5} />
-              <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 to-teal-600 tracking-tight">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-emerald-700 to-teal-600 tracking-tight">
                 CRYPTO AES
               </h1>
             </div>
@@ -117,14 +117,14 @@ export default function Home() {
               <div className="flex gap-4">
                 <button
                   onClick={handleEncrypt}
-                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-2xl transition-all shadow-lg shadow-emerald-600/20 active:scale-95 flex items-center justify-center gap-2 group"
+                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-2xl transition-all shadow-lg shadow-emerald-600/20 cursor-pointer active:scale-95 flex items-center justify-center gap-2 group"
                 >
                   <Lock className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   Mã Hóa
                 </button>
                 <button
                   onClick={handleDecrypt}
-                  className="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-6 rounded-2xl transition-all shadow-lg shadow-teal-600/20 active:scale-95 flex items-center justify-center gap-2 group"
+                  className="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-6 rounded-2xl transition-all shadow-lg shadow-teal-600/20 cursor-pointer active:scale-95 flex items-center justify-center gap-2 group"
                 >
                   <Unlock className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   Giải Mã
@@ -158,7 +158,7 @@ export default function Home() {
               <textarea
                 value={outputText}
                 readOnly
-                className="w-full text-lg flex-1 h-full min-h-75 p-6 bg-emerald-50 border border-emerald-200 rounded-4xl outline-none text-emerald-800 resize-none placeholder-emerald-500 shadow-inner"
+                className="w-full text-lg flex-1 h-full min-h-75 p-6 bg-emerald-50 border border-emerald-200 rounded-4xl outline-none text-emerald-800 resize-none placeholder-emerald-500 shadow-inner cursor-default"
                 placeholder="Kết quả sẽ hiển thị ở đây..."
               />
             </div>
