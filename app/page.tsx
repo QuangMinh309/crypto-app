@@ -20,7 +20,16 @@ export default function Home() {
       alert("Vui lòng nhập khóa bí mật!");
       return;
     }
-    const ciphertext = CryptoJS.AES.encrypt(inputText, secretKey).toString();
+    const encrypted = CryptoJS.AES.encrypt(inputText, secretKey);
+
+    // object CipherParams
+    console.log("Salt:", encrypted.salt?.toString());
+    console.log("IV:", encrypted.iv?.toString());
+    console.log("Key (derived):", encrypted.key?.toString());
+    console.log("Ciphertext:", encrypted.ciphertext.toString());
+
+    const ciphertext = encrypted.toString();
+
     setOutputText(ciphertext);
   };
 
